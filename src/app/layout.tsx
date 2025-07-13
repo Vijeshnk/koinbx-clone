@@ -6,9 +6,8 @@ import Script from "next/script";
 import { ThemeProvider as NextThemesProvider, type ThemeProviderProps } from "next-themes";
 import { PropsWithChildren } from "react";
 import Layout from "../components/Layout";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AnnouncementBar from "../components/AnnouncementBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +36,9 @@ export default function RootLayout({
         <Script crossOrigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js" />
       </head>
       <body suppressHydrationWarning className="antialiased">
-        <AnnouncementBar />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Layout>
-            <Header />
+            <Navbar />
             {children}
             <Footer />
           </Layout>

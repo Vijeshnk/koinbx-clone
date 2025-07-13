@@ -2,21 +2,50 @@
 import Image from "next/image";
 
 const Header = () => (
-  <header className="sticky top-0 z-30 bg-[#222c42] shadow-md w-full flex items-center justify-between px-6 md:px-12 py-4 h-20 border-b border-[#2c3753]">
+  <header className="sticky top-0 z-30 bg-[#1e2a45] w-full flex items-center justify-between px-6 md:px-12 py-4 h-16">
     <a href="/" className="flex items-center gap-2">
-      <Image src="/assets/img/NewUI/KoinbxLogo.svg" alt="KoinBX Logo" width={170} height={36} className="h-9 w-auto" priority />
+      <Image src="/assets/img/NewUI/KoinbxLogo.svg" alt="KoinBX Logo" width={130} height={28} className="h-7 w-auto" priority />
     </a>
-    <nav className="hidden lg:flex gap-8 text-white font-medium text-base tracking-wide">
-      <a href="#" className="hover:text-[#31c4d8] transition-colors">Trade</a>
-      <a href="#" className="hover:text-[#31c4d8] transition-colors">Markets</a>
-      <a href="#" className="hover:text-[#31c4d8] transition-colors">Academy</a>
-      <a href="#" className="hover:text-[#31c4d8] transition-colors">Contact</a>
+    
+    {/* Desktop Navigation */}
+    <nav className="hidden lg:flex items-center gap-1">
+      <div className="flex items-center bg-[#2a3a5c] rounded-lg p-1">
+        <div className="grid grid-cols-3 gap-1 p-1">
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+        </div>
+      </div>
+      <a href="#" className="px-4 py-2 text-white font-medium text-sm hover:text-[#31c4d8] transition-colors">Markets</a>
+      <a href="#" className="px-4 py-2 text-white font-medium text-sm hover:text-[#31c4d8] transition-colors">Fees</a>
+      <a href="#" className="px-4 py-2 text-white font-medium text-sm hover:text-[#31c4d8] transition-colors">Trade</a>
+      <a href="#" className="px-4 py-2 text-white font-medium text-sm hover:text-[#31c4d8] transition-colors">List Your Crypto</a>
+      <a href="#" className="px-4 py-2 text-white font-medium text-sm hover:text-[#31c4d8] transition-colors">Earnings</a>
     </nav>
+    
     <div className="flex items-center gap-3">
-      {/* Theme toggle placeholder */}
-      <span className="hidden md:inline-block px-3 py-2 text-white/60 text-xs font-mono">[Theme]</span>
-      <a href="#" className="px-5 py-2 bg-transparent border border-[#31c4d8] text-[#31c4d8] rounded-lg font-semibold text-sm hover:bg-[#263a51]/80 transition-colors duration-200">Login</a>
-      <a href="#" className="ml-2 px-5 py-2 bg-gradient-to-l from-[#31c4d8] to-[#2f80ed] text-white rounded-lg font-semibold text-sm shadow-lg hover:from-[#2f80ed] hover:to-[#31c4d8] transition-colors duration-200">Sign Up</a>
+      <a href="#" className="px-4 py-2 text-white font-medium text-sm hover:text-[#31c4d8] transition-colors">Login</a>
+      <a href="#" className="px-6 py-2 bg-[#31c4d8] text-white rounded-lg font-semibold text-sm hover:bg-[#2bb3d6] transition-colors">Register</a>
+      
+      {/* Theme toggle */}
+      <button className="p-2 text-white/60 hover:text-white transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+      
+      {/* Download button */}
+      <button className="p-2 text-white/60 hover:text-white transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 16l-4-4h3V4h2v8h3l-4 4zm-8 2h16v2H4v-2z"/>
+        </svg>
+      </button>
     </div>
   </header>
 );
