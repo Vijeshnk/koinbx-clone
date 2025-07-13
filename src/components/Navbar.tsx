@@ -6,8 +6,6 @@ import ThemeSwitcher from "./ThemeSwitcher";
 const Navbar = () => {
   const [isDownloadOpen, setDownloadOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isProductsOpen, setProductsOpen] = useState(false);
-  const [isLearnOpen, setLearnOpen] = useState(false);
 
   return (
     <nav className="bg-white dark:bg-koinbx-dark-blue fixed w-full z-20 top-0 start-0" style={{ height: '62.172px' }}>
@@ -23,7 +21,7 @@ const Navbar = () => {
               style={{ height: '46.17px', width: '135px' }}
             />
           </a>
-          <div className="hidden xl:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center space-x-4">
             <a href="/markets" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded flex items-center gap-2">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.90659 0C4.35169 0.152124 4.51695 0.469519 4.50944 0.929647C4.49207 1.84239 4.50474 2.75561 4.50381 3.66882C4.50381 4.19327 4.20003 4.49799 3.67701 4.49846C2.7286 4.49846 1.78036 4.49846 0.832269 4.49846C0.308771 4.49799 0.00640881 4.19374 0.0059393 3.66882C0.00500029 2.75561 0.0181465 1.84239 0.000305233 0.929647C-0.00814587 0.466702 0.158059 0.151655 0.603151 0H3.90659Z" fill="currentColor"></path>
@@ -38,45 +36,10 @@ const Navbar = () => {
               </svg>
               Markets
             </a>
+            <a href="/fees" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">Fees</a>
             <a href="/trade/BTC-INR" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">Trade</a>
             <a href="/list-your-crypto-on-koinbx" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">List Your Crypto</a>
-            <div
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
-            >
-              <button className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded flex items-center">
-                Products
-                <svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
-                </svg>
-              </button>
-              {isProductsOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg dark:bg-gray-800 py-2">
-                  <a href="/spot-trading" className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Spot Trading</a>
-                  <a href="/p2p" className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">P2P</a>
-                  <a href="/stake" className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Stake</a>
-                </div>
-              )}
-            </div>
-            <div
-              className="relative"
-              onMouseEnter={() => setLearnOpen(true)}
-              onMouseLeave={() => setLearnOpen(false)}
-            >
-              <button className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded flex items-center">
-                Learn
-                <svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
-                </svg>
-              </button>
-              {isLearnOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg dark:bg-gray-800 py-2">
-                  <a href="/blog" className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Blog</a>
-                  <a href="/faq" className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
-                </div>
-              )}
-            </div>
+            <a href="/earnings" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">Earnings</a>
           </div>
         </div>
 
@@ -131,15 +94,10 @@ const Navbar = () => {
         <div className={`items-center justify-between w-full md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="navbar-sticky">
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li><a href="/markets" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Markets</a></li>
+            <li><a href="/fees" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Fees</a></li>
             <li><a href="/trade/BTC-INR" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Trade</a></li>
             <li><a href="/list-your-crypto-on-koinbx" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">List Your Crypto</a></li>
-            <li className="border-t border-gray-200 my-2"></li>
-            <li><a href="/spot-trading" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Spot Trading</a></li>
-            <li><a href="/p2p" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">P2P</a></li>
-            <li><a href="/stake" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Stake</a></li>
-            <li className="border-t border-gray-200 my-2"></li>
-            <li><a href="/blog" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Blog</a></li>
-            <li><a href="/faq" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">FAQ</a></li>
+            <li><a href="/earnings" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Earnings</a></li>
             <li className="border-t border-gray-200 my-2"></li>
             <li><a href="/login" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Login</a></li>
             <li><a href="/register" className="block py-2 px-3 text-white bg-blue-700 rounded hover:bg-blue-800 text-center">Register</a></li>
