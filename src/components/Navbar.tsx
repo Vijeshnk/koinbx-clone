@@ -22,7 +22,7 @@ const Navbar = () => {
             />
           </a>
           <div className="hidden xl:flex items-center space-x-4">
-            <a href="/markets" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded flex items-center gap-2">
+            <a href="/markets" className="nav-link d-none d-xl-block text-[#f5f5f5] hover:text-blue-700 px-4 py-2 rounded flex items-center gap-2 transition-all duration-500 relative">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.90659 0C4.35169 0.152124 4.51695 0.469519 4.50944 0.929647C4.49207 1.84239 4.50474 2.75561 4.50381 3.66882C4.50381 4.19327 4.20003 4.49799 3.67701 4.49846C2.7286 4.49846 1.78036 4.49846 0.832269 4.49846C0.308771 4.49799 0.00640881 4.19374 0.0059393 3.66882C0.00500029 2.75561 0.0181465 1.84239 0.000305233 0.929647C-0.00814587 0.466702 0.158059 0.151655 0.603151 0H3.90659Z" fill="currentColor"></path>
                 <path d="M10.6542 0C11.0988 0.152124 11.2646 0.469519 11.2571 0.929647C11.2397 1.84239 11.2524 2.75561 11.2514 3.66882C11.2514 4.19327 10.9476 4.49799 10.4246 4.49846C9.47621 4.49846 8.52797 4.49846 7.57988 4.49846C7.05638 4.49846 6.75402 4.19374 6.75355 3.66882C6.75355 2.75561 6.76576 1.84239 6.74839 0.929647C6.73947 0.466702 6.90567 0.151655 7.35076 0L10.6542 0Z" fill="currentColor"></path>
@@ -36,10 +36,10 @@ const Navbar = () => {
               </svg>
               Markets
             </a>
-            <a href="/fees" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">Fees</a>
-            <a href="/trade/BTC-INR" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">Trade</a>
-            <a href="/list-your-crypto-on-koinbx" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">List Your Crypto</a>
-            <a href="/earnings" className="nav-link d-none d-xl-block text-[#F5F5F5] hover:text-blue-700 font-roboto text-sm px-4 py-2 rounded">Earnings</a>
+            <a href="/fees" className="nav-link d-none d-xl-block text-[#f5f5f5] hover:text-blue-700 px-4 py-2 rounded transition-all duration-500 relative">Fees</a>
+            <a href="/trade/BTC-INR" className="nav-link d-none d-xl-block text-[#f5f5f5] hover:text-blue-700 px-4 py-2 rounded transition-all duration-500 relative">Trade</a>
+            <a href="/list-your-crypto-on-koinbx" className="nav-link d-none d-xl-block text-[#f5f5f5] hover:text-blue-700 px-4 py-2 rounded transition-all duration-500 relative">List Your Crypto</a>
+            <a href="/earnings" className="nav-link d-none d-xl-block text-[#f5f5f5] hover:text-blue-700 px-4 py-2 rounded transition-all duration-500 relative">Earnings</a>
           </div>
         </div>
 

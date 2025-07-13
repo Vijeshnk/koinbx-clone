@@ -53,7 +53,7 @@ export default {
         }
       },
       fontFamily: {
-        'roboto': ['Roboto', 'sans-serif'],
+        'roboto': ['var(--font-roboto)', 'Roboto', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
