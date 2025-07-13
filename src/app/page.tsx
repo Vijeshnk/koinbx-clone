@@ -5,7 +5,6 @@ import HowItWorks from "../components/HowItWorks";
 import Features from "../components/Features";
 import MarketSection from "../components/MarketSection";
 import AppDownload from "../components/AppDownload";
-import TrustedBy from "../components/TrustedBy";
 import Community from "../components/Community";
 import LatestBlogs from "../components/LatestBlogs";
 import NeedHelp from "../components/NeedHelp";
@@ -24,7 +23,6 @@ export default function Home() {
       <NeedHelp />
       <BoostBanner />
       <LatestBlogs />
-      <TrustedBy />
       <Community />
       <Newsletter />
     </>
