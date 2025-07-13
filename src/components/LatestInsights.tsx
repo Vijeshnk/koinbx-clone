@@ -35,7 +35,7 @@ const LatestInsights = () => {
 
   return (
     <div className="MuiBox-root">
-      <div className="blog-card-bg bg-white dark:bg-gray-900 py-8">
+      <div className="blog-card-bg bg-white dark:bg-[#131932] py-8">
         <div className="blog-card-container max-w-6xl mx-auto px-4">
           <div className="blog-card-container-head mb-6">
             <p className="blog-card-title text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">

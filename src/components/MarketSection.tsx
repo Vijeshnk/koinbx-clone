@@ -133,7 +133,7 @@ const MarketSection = () => {
 
   return (
     <div className="MuiBox-root">
-      <div className="top-gainers-losers-bg bg-gray-50 dark:bg-gray-900 py-12">
+      <div className="top-gainers-losers-bg bg-gray-50 dark:bg-[#131932] py-12">
         <div className="clscontainer top-gainers-container max-w-7xl mx-auto px-4">
           <div className="mb-8">
             <h2 className="top-gainers-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">
