@@ -54,6 +54,7 @@ export default {
       },
       fontFamily: {
         'roboto': ['var(--font-roboto)', 'Roboto', 'sans-serif'],
+        'ibm-plex-sans': ['var(--font-ibm-plex-sans)', 'IBM Plex Sans', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
