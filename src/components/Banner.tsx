@@ -103,7 +103,7 @@ const Banner = () => {
         </div>
 
         {/* Marquee section */}
-        <div className="banner-marquee-div bg-blue-900 dark:bg-[#141932] py-4">
+        <div className="banner-marquee-div bg-[#f5f7fa] dark:bg-[#1a213d] py-4 overflow-hidden">
           <div className="MuiContainer-root MuiContainer-maxWidthLg max-w-6xl mx-auto px-4">
             <div className="banner-marquee flex items-center gap-4">
               <div className="marquee-img">
@@ -116,9 +116,9 @@ const Banner = () => {
                 />
               </div>
               <div className="marquee-outer flex-1">
-                <div className="marquee-inner text-white">
-                  <span className="attetntion-text-banner font-bold">Attention KoinBX Users : </span>
-                  <span className="marque-text-banner">
+                <div className="marquee-inner text-[#222] dark:text-white whitespace-nowrap">
+                  <span className="marquee-text-banner marquee-text-animate inline-block">
+                    <span className="attetntion-text-banner font-bold">Attention KoinBX Users : </span>
                     KoinBX updated the primary bank to accept INR deposits through IMPS, NEFT, and RTGS.
                   </span>
                 </div>
@@ -129,6 +129,23 @@ const Banner = () => {
       </div>
 
       <style jsx>{`
+        .marquee-inner {
+          position: relative;
+          overflow: hidden;
+        }
+        .marquee-text-animate {
+          display: inline-block;
+          white-space: nowrap;
+          animation: marquee-left 18s linear infinite;
+        }
+        @keyframes marquee-left {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
         .bg-banner-background .banner-container {
           background: url(/assets/img/NewUI/Background.webp);
           background-position-x: center;
