@@ -1,25 +1,96 @@
 import Image from "next/image";
 
 const AppDownload = () => (
-  <section className="relative py-16 px-4 md:px-0 bg-[#212b41] w-full">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 ">
-      <div className="flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left">
-        <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Stay Ahead with KoinBX App</h2>
-        <p className="text-[#dbe8eb] text-base mb-6 max-w-md">Buy, sell and manage your portfolio with our easy-to-use app for Android & iOS. Get real-time alerts and fast support on the go.</p>
-        <div className="flex gap-4">
-          <a href="#">
-            <Image src="/assets/img/NewUI/GooglePlayicon.svg" alt="Google Play" width={160} height={54} className="h-14 w-auto" />
-          </a>
-          <a href="#">
-            <Image src="/assets/img/NewUI/iOS.svg" alt="Apple Store" width={160} height={54} className="h-14 w-auto" />
-          </a>
+  <div className="MuiBox-root">
+    <div className="clsstayAheadBlcok mt-5 bg-gray-900 text-white py-16">
+      <div className="clscontainer max-w-7xl mx-auto px-4">
+        <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          Stay ahead and become a Crypto Trailblazer with the KoinBX App!
+        </h2>
+        
+        <div className="row align-items-center pt-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Right Column - Download Section */}
+          <div className="col-lg-4 order-lg-2 clsstayAheadPlaystoreBlock lg:col-span-4 lg:order-2">
+            <h3 className="mb-4 pb-2 text-2xl md:text-3xl font-bold text-white">
+              Trade Anytime,<br />
+              Anywhere.
+            </h3>
+            
+            <div className="d-flex flex items-start gap-6">
+              <ul className="list-none p-0 m-0 flex flex-col gap-3">
+                <li>
+                  <a 
+                    href="https://play.google.com/store/apps/details?id=com.application.koinbazar&hl=en_IN&gl=US" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="mb-2">
+                      <Image 
+                        src="/assets/img/NewUI/GooglePlayicon.svg" 
+                        className="img-fluid hover:opacity-80 transition-opacity" 
+                        alt="koinbx-google-play-store" 
+                        width={160}
+                        height={48}
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://apps.apple.com/in/app/koinbazar/id1567360326" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="mb-2">
+                      <Image 
+                        src="/assets/img/NewUI/iOS.svg" 
+                        className="img-fluid hover:opacity-80 transition-opacity" 
+                        alt="koinbx-ios-app-store" 
+                        width={160}
+                        height={48}
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              
+              <div className="flex-shrink-0">
+                <Image
+                  src="/assets/img/NewUI/qr-code-placeholder.svg"
+                  alt="QR Code for KoinBX App Download"
+                  width={96}
+                  height={96}
+                  className="clsstayheadqr w-24 h-24 bg-white p-2 rounded"
+                />
+              </div>
+            </div>
+            
+            <p className="text-gray-300 text-lg mt-6 leading-relaxed">
+              Experience smooth trading and enhance your crypto portfolio while on the move!
+            </p>
+          </div>
+
+          {/* Left Column - Mobile Image */}
+          <div className="col-lg-8 order-lg-1 lg:col-span-8 lg:order-1">
+            <div className="flex justify-center lg:justify-start">
+              <Image 
+                src="/assets/img/NewUI/MobileStayAhea.webp" 
+                className="img-fluid max-w-full h-auto" 
+                alt="koinbx-app" 
+                width={600}
+                height={400}
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex-1 flex items-center justify-center relative min-h-[310px]">
-        <Image src="/assets/img/NewUI/MobileStayAhea.webp" alt="App mockup" fill style={{objectFit:'contain'}} className="block w-full max-w-[330px] h-auto relative z-10" />
-      </div>
     </div>
-  </section>
+  </div>
 );
 
 export default AppDownload;
