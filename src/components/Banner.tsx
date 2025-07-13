@@ -4,48 +4,49 @@ import Image from "next/image";
 const Banner = () => {
   return (
     <div className="MuiBox-root bg-white dark:bg-[#141932]">
-      <div className="bg-banner-background  dark:bg-[#141932]">
+      <div className="bg-banner-background dark:bg-[#141932]">
         <div className="container banner-container">
           {/* Top announcement */}
           <p className="top100-text">
-            <a 
-              href="https://koinbx.com/blog/fiu-registered-compliant-indian-regulations" 
-              target="_blank" 
+            <a
+              href="https://koinbx.com/blog/fiu-registered-compliant-indian-regulations"
+              target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-300"
+              className="text-[#222] dark:text-[#b6eaff] hover:text-[#00c5f6] transition-colors"
             >
-              We are <strong>FIU registered & 100% compliant</strong> with Indian regulations.
+              We are <strong className="text-[#00c5f6]">FIU registered & 100% compliant</strong> with Indian regulations.
             </a>
           </p>
 
           {/* Top 100 announcement */}
           <div className="topp100div flex items-center gap-2 mb-6">
             <span>
-              <Image 
-                src="/assets/img/NewUI/growth.svg" 
-                alt="flight-img" 
-                loading="lazy" 
-                width={22} 
-                height={22} 
+              <Image
+                src="/assets/img/NewUI/growth.svg"
+                alt="flight-img"
+                loading="lazy"
+                width={22}
+                height={22}
+                style={{ filter: 'brightness(0) saturate(100%) invert(77%) sepia(13%) saturate(7492%) hue-rotate(157deg) brightness(102%) contrast(101%)' }}
               />
             </span>
             <span className="top100-text cursor-pointer">
-              <a 
-                href="https://koinbx.com/blog/koinbx-achieves-top-100-exchanges-coinmarketcap" 
-                target="_blank" 
+              <a
+                href="https://koinbx.com/blog/koinbx-achieves-top-100-exchanges-coinmarketcap"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-300"
+                className="text-[#222] dark:text-[#b6eaff] hover:text-[#00c5f6] transition-colors"
               >
-                KoinBX ranks in <strong className="text-[#00C5F6]">Top 100</strong> exchanges on CoinMarketCap.
+                KoinBX ranks in <strong className="text-[#00c5f6]">Top 100</strong> exchanges on CoinMarketCap.
               </a>
             </span>
           </div>
 
           {/* Main banner title */}
           <div className="banner-content-title-div mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center leading-tight">
-              The <span>Most</span> <span className="green-text-banner text-green-400">Trusted</span> and{" "}
-              <span>Fastest</span> <span className="green-text-banner text-green-400">Growing</span> Crypto Exchange
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#222] text-center leading-tight dark:text-[#fff]">
+              The <span className="font-bold">Most</span> <span className="font-bold text-[#00c5f6]">Trusted</span> and{' '}
+              <span className="font-bold">Fastest</span> <span className="font-bold text-[#00c5f6]">Growing</span> Crypto Exchange
             </h1>
           </div>
 
@@ -74,28 +75,28 @@ const Banner = () => {
                 <p className="sub-text-banner text-sm text-gray-300">Exciting Milestones Ahead</p>
               </div>
               <div>
-                <p className="bold-text-banner text-2xl font-bold mb-2">
+                <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
                   <span className="counter">1.5</span> M+
                 </p>
-                <p className="sub-text-banner text-sm text-gray-300">Userbase</p>
+                <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Userbase</p>
               </div>
               <div>
-                <p className="bold-text-banner text-2xl font-bold mb-2">
+                <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
                   <span className="counter">225</span>+
                 </p>
-                <p className="sub-text-banner text-sm text-gray-300">Active Pairs</p>
+                <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Active Pairs</p>
               </div>
               <div>
-                <p className="bold-text-banner text-2xl font-bold mb-2">
+                <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
                   $<span className="counter">38</span> Billion+
                 </p>
-                <p className="sub-text-banner text-sm text-gray-300">Traded so far</p>
+                <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Traded so far</p>
               </div>
               <div>
-                <p className="bold-text-banner text-2xl font-bold mb-2">
+                <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
                   <span className="counter">200</span>+
                 </p>
-                <p className="sub-text-banner text-sm text-gray-300">Cryptos Listed</p>
+                <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Cryptos Listed</p>
               </div>
             </div>
           </div>
