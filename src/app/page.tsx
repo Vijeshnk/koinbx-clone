@@ -10,6 +10,8 @@ import LatestBlogs from "../components/LatestBlogs";
 import NeedHelp from "../components/NeedHelp";
 import BoostBanner from "../components/BoostBanner";
 import Newsletter from "../components/Newsletter";
+import TrustedPartners from "../components/TrustedPartners";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
       <LatestBlogs />
       <Community />
       <Newsletter />
+      <TrustedPartners />
+      <Footer />
     </>
   );
 }
