@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import { Icon, MoonIcon } from "../../public/assets/img/NewUI/moon";
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -31,13 +32,7 @@ const ThemeSwitcher = () => {
           className="w-5 h-5"
         />
       ) : (
-        <Image 
-          src="/assets/img/NewUI/moon.svg" 
-          width={20} 
-          height={20} 
-          alt="Switch to dark mode" 
-          className="w-5 h-5"
-        />
+        <MoonIcon />
       )}
     </button>
   );

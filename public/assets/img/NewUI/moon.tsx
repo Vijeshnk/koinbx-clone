@@ -1,4 +1,4 @@
-const Icon = () => (
+export const MoonIcon = () => (
   <svg
     stroke="currentColor"
     fill="currentColor"
@@ -14,5 +14,3 @@ const Icon = () => (
     </g>
   </svg>
 );
-
-export default Icon;
