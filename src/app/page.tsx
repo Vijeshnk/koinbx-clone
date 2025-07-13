@@ -21,9 +21,9 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <AppDownload />
+      <NeedHelp />
       <BoostVisibility />
       <LatestBlogs />
-      <NeedHelp />
       <TrustedBy />
       <Community />
       <Newsletter />
