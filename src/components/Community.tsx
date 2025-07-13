@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const Community = () => (
-  <div className="w-full bg-white dark:bg-[#101426] py-0">
+  <div className="w-full bg-white dark:bg-[#131932] py-0">
     <div className="max-w-7xl mx-auto px-4 pt-10 pb-0">
       <h2 className="text-4xl md:text-5xl font-extrabold text-black dark:text-white text-left mb-4">Join Our Community</h2>
       <p className="text-base text-[#232323] dark:text-[#8F9194] text-left mb-10 max-w-3xl">

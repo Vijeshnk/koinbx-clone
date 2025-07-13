@@ -6,7 +6,7 @@ const cardCount = 10; // Number of cards to show in the marquee
 const cards = Array.from({ length: cardCount }, (_, i) => i);
 
 const TrustedPartners = () => (
-  <div className="w-full bg-white dark:bg-[#101426] py-8 overflow-hidden">
+  <div className="w-full bg-white dark:bg-[#131932] py-8 overflow-hidden">
     <div className="relative">
       <div className="flex space-x-8 animate-marquee">
         {cards.concat(cards).map((_, index) => (

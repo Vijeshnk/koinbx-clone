@@ -21,7 +21,7 @@ const steps = [
 
 const HowItWorks = () => (
   <>
-    <section className="bg-white dark:bg-[#101426] py-16">
+    <section className="bg-white dark:bg-[#131932] py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-14">
           Buying &amp; selling cryptocurrency will be more user-friendly than in the past
@@ -55,7 +55,7 @@ const HowItWorks = () => (
       </div>
     </section>
     {/* Sign up CTA section */}
-    <div className="w-full bg-white dark:bg-[#101426] py-16">
+    <div className="w-full bg-white dark:bg-[#131932] py-16">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
         <h3 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-6">
           Sign up now to build your crypto portfolio for free!

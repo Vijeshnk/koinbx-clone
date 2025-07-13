@@ -130,7 +130,7 @@ const Footer = () => {
 	};
 
 	return (
-		<footer className="w-full bg-white dark:bg-[#101426] text-[#707a8a] dark:text-white pt-8 pb-4">
+		<footer className="w-full bg-white dark:bg-[#131932] text-[#707a8a] dark:text-white pt-8 pb-4">
 			<div className="max-w-7xl mx-auto px-4">
 				{/* Desktop grid layout */}
 				<div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2 mb-10 text-xs">

@@ -21,7 +21,7 @@ const helpLinks = [
 
 const NeedHelp = () => (
   <div className="MuiBox-root ">
-    <section className="clshelp-section bg-white dark:bg-[#101426] py-16">
+    <section className="clshelp-section bg-white dark:bg-[#131932] py-16">
       <div className="clscontainer max-w-7xl mx-auto px-4">
         <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Need Help?

@@ -1,7 +1,7 @@
 import React from "react";
 
 const NewsletterSection = () => (
-  <div className="w-full bg-[#fbfcfd] dark:bg-[#101426] py-0">
+  <div className="w-full bg-[#fbfcfd] dark:bg-[#131932] py-0">
     <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between pt-2 pb-10">
       <div className="flex-1 min-w-0">
         <h2 className="text-5xl font-extrabold text-black dark:text-white mb-2">

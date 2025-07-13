@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const BoostBanner = () => (
-  <div className="MuiBox-root jss8 bg-white dark:bg-[#101426]">
+  <div className="MuiBox-root jss8 bg-white dark:bg-[#131932]">
     <div className="clscontainer clsSingleCarousal max-w-7xl mx-auto px-4">
       <div className="single-card-carousal-container flex justify-center">
         <div className="">
