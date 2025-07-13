@@ -9,7 +9,7 @@ import Community from "../components/Community";
 import LatestBlogs from "../components/LatestBlogs";
 import NeedHelp from "../components/NeedHelp";
 import BoostBanner from "../components/BoostBanner";
-import Newsletter from "../components/Newsletter";
+import NewsletterSection from "@/components/NewsletterSection";
 import TrustedPartners from "../components/TrustedPartners";
 import Footer from "../components/Footer";
 
@@ -26,7 +26,7 @@ export default function Home() {
       <BoostBanner />
       <LatestBlogs />
       <Community />
- 
+      <NewsletterSection />
       <TrustedPartners />
       <Footer />
     </>
