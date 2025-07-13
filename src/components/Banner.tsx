@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="MuiBox-root">
-      <div className="bg-banner-background">
+    <div className="MuiBox-root bg-white dark:bg-[#141932]">
+      <div className="bg-banner-background  dark:bg-[#141932]">
         <div className="container banner-container">
           {/* Top announcement */}
           <p className="top100-text">
@@ -141,6 +141,14 @@ const Banner = () => {
           margin-right: auto;
           padding: 3% 2rem 2rem;
           border-radius: 1rem;
+        }
+        .bg-banner-background.bg-white .banner-container {
+          background: white !important;
+        }
+        }
+        .bg-banner-background.bg-white .banner-container {
+          background: none;
+        }
         }
 
         @media (min-width: 768px) and (max-width: 1200px) {
