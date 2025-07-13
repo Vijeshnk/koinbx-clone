@@ -3,23 +3,23 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="MuiBox-root bg-white dark:bg-[#141932]">
+    <div className="MuiBox-root bg-white dark:bg-[#131932]">
       <div className="bg-banner-background dark:bg-[#141932]">
         <div className="container banner-container">
           {/* Top announcement */}
-          <p className="top100-text">
+          <p className="top100-text mt-16">
             <a
               href="https://koinbx.com/blog/fiu-registered-compliant-indian-regulations"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#222] dark:text-[#b6eaff] hover:text-[#00c5f6] transition-colors"
+              className="text-[#222] dark:text-[#b6eaff] hover:text-[#00c5f6] transition-colors underline"
             >
               We are <strong className="text-[#00c5f6]">FIU registered & 100% compliant</strong> with Indian regulations.
             </a>
           </p>
 
           {/* Top 100 announcement */}
-          <div className="topp100div flex items-center gap-2 mb-6">
+          <div className="topp100div flex items-center justify-center gap-2 mb-6">
             <span>
               <Image
                 src="/assets/img/NewUI/growth.svg"
@@ -35,7 +35,7 @@ const Banner = () => {
                 href="https://koinbx.com/blog/koinbx-achieves-top-100-exchanges-coinmarketcap"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#222] dark:text-[#b6eaff] hover:text-[#00c5f6] transition-colors"
+                className="text-[#222] dark:text-[#b6eaff] hover:text-[#00c5f6] transition-colors underline"
               >
                 KoinBX ranks in <strong className="text-[#00c5f6]">Top 100</strong> exchanges on CoinMarketCap.
               </a>

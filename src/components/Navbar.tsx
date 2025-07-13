@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-koinbx-dark-blue fixed w-full z-20 top-0 start-0" style={{ height: '62.172px' }}>
+    <nav className="bg-white dark:bg-[#19213d] fixed w-full z-20 top-0 start-0" style={{ height: '62.172px' }}>
       <div className="flex flex-wrap items-center justify-between w-full h-full" style={{ paddingLeft: '15px', paddingRight: '15px', paddingTop: '0', paddingBottom: '0' }}>
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
           <a href="/" className="flex items-center">
@@ -74,7 +74,7 @@ const Navbar = () => {
               onMouseLeave={() => setDownloadOpen(false)}
             >
               <button type="button" className="p-2 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-                <Image src="/assets/img/NewUI/download.svg" width={20} height={20} alt="Download App" />
+                <Image src="/assets/img/NewUI/download.svg" width={20} height={20} alt="Download App" className="invert dark:invert-0" />
               </button>
               {isDownloadOpen && (
                 <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg dark:bg-gray-800 p-4">
@@ -96,6 +96,19 @@ const Navbar = () => {
               )}
             </div>
           </div>
+          <a href="/register" className="text-center rounded-full transition-all duration-300 md:hidden" style={{ 
+            lineHeight: '29px', 
+            fontStyle: 'normal', 
+            fontWeight: '500', 
+            color: 'rgb(30, 35, 41)', 
+            fontFamily: 'IBM Plex Sans', 
+            fontSize: '14px', 
+            margin: '0px 5px', 
+            padding: '7px 24px', 
+            borderRadius: '50px', 
+            background: 'rgb(89, 225, 255)',
+            textDecoration: 'none'
+          }}>Register</a>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -120,7 +133,6 @@ const Navbar = () => {
             <li><a href="/earnings" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Earnings</a></li>
             <li className="border-t border-gray-200 my-2"></li>
             <li><a href="/login" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Login</a></li>
-            <li><a href="/register" className="block py-2 px-3 text-white bg-blue-700 rounded hover:bg-blue-800 text-center">Register</a></li>
           </ul>
         </div>
       </div>
