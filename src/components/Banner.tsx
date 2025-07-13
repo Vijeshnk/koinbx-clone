@@ -102,7 +102,7 @@ const Banner = () => {
         </div>
 
         {/* Marquee section */}
-        <div className="banner-marquee-div bg-blue-900 py-4">
+        <div className="banner-marquee-div bg-blue-900 dark:bg-[#141932] py-4">
           <div className="MuiContainer-root MuiContainer-maxWidthLg max-w-6xl mx-auto px-4">
             <div className="banner-marquee flex items-center gap-4">
               <div className="marquee-img">
