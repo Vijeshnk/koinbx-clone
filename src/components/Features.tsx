@@ -28,7 +28,7 @@ const features = [
 ];
 
 const Features = () => (
-  <div className="MuiBox-root feature-box mt-5 pt-4">
+  <div className="MuiBox-root feature-box  ">
     <section className="clssalient-feature-section bg-gray-50 dark:bg-gray-900 py-16">
       <div className="clscontainer max-w-7xl mx-auto px-4">
         <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-6">
