@@ -6,7 +6,6 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +42,6 @@ export default function RootLayout({
           <Layout>
             <Navbar />
             {children}
-            <Footer />
           </Layout>
         </ThemeProvider>
       </body>
