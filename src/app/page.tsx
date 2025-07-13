@@ -7,9 +7,9 @@ import MarketSection from "../components/MarketSection";
 import AppDownload from "../components/AppDownload";
 import TrustedBy from "../components/TrustedBy";
 import Community from "../components/Community";
-import BoostVisibility from "../components/BoostVisibility";
 import LatestBlogs from "../components/LatestBlogs";
 import NeedHelp from "../components/NeedHelp";
+import BoostBanner from "../components/BoostBanner";
 import Newsletter from "../components/Newsletter";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <Features />
       <AppDownload />
       <NeedHelp />
-      <BoostVisibility />
+      <BoostBanner />
       <LatestBlogs />
       <TrustedBy />
       <Community />
