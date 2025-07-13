@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AppDownload = () => (
   <div className="MuiBox-root">
-    <div className="clsstayAheadBlcok  bg-gray-900 text-white py-16">
+    <div className="clsstayAheadBlcok bg-white dark:bg-[#101426] text-white py-16">
       <div className="clscontainer max-w-7xl mx-auto px-4">
         <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-white mb-12">
           Stay ahead and become a Crypto Trailblazer with the KoinBX App!

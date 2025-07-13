@@ -20,8 +20,8 @@ const helpLinks = [
 ];
 
 const NeedHelp = () => (
-  <div className="MuiBox-root mb-5 pb-5">
-    <section className="clshelp-section bg-gray-50 dark:bg-gray-900 py-16">
+  <div className="MuiBox-root ">
+    <section className="clshelp-section bg-white dark:bg-[#101426] py-16">
       <div className="clscontainer max-w-7xl mx-auto px-4">
         <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Need Help?
@@ -31,7 +31,7 @@ const NeedHelp = () => (
           <div className="row grid grid-cols-1 md:grid-cols-3 gap-8">
             {helpLinks.map((item, index) => (
               <div key={index} className="col-sm-12 col-lg-4">
-                <div className="clshelp-box bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+                <div className="clshelp-box bg-[#f5f7fa] dark:bg-[#1a213d] rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
                   <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                     {item.title}
                   </h4>
