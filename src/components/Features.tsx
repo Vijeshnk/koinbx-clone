@@ -28,48 +28,41 @@ const features = [
 ];
 
 const Features = () => (
-  <div className="MuiBox-root feature-box  ">
-    <section className="clssalient-feature-section bg-gray-50 dark:bg-gray-900 py-16">
-      <div className="clscontainer max-w-7xl mx-auto px-4">
-        <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-6">
+  <div className="w-full min-h-screen bg-white dark:bg-[#101426] py-0">
+    <section className="py-0">
+      <div className="max-w-5xl mx-auto px-4 pt-10 pb-0">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white text-left mb-4">
           Salient Features of KoinBX
         </h2>
-        <h6 className="clshelper-title text-lg text-center text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-base text-[#8F9194] text-left mb-10 max-w-3xl">
           KoinBX is a cutting-edge crypto trading platform that offers a host of remarkable features tailored to cater to the needs of seasoned traders and crypto enthusiasts. Here are some of the standout features that set KoinBX apart from the rest.
-        </h6>
-        
-        <div className="clssalient-feature-box-block">
-          <div className="row row-cols-1 row-cols-sm-1 clssalient-feature-box-block-row grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className={`col-md-6 clssalient-feature-box ${
-                  feature.hasSpecialBg 
-                    ? 'clsgreen-bg bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20' 
-                    : 'bg-white dark:bg-gray-800'
-                } rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow`}
-              >
-                <div className="clssalient-feature-box-title-block flex items-center justify-between mb-6">
-                  <h3 className="order-1 text-xl font-semibold text-gray-900 dark:text-white flex-1">
-                    {feature.title}
-                  </h3>
-                  <figure className="order-2 ml-4 flex-shrink-0">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title.toLowerCase().replace(/\s+/g, '-')}
-                      className="img-fluid w-16 h-16 object-contain"
-                      width={64}
-                      height={64}
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {feature.desc}
-                </p>
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-[#fbfcfd] dark:bg-[#1a213d] rounded-lg shadow-lg p-10 flex flex-col justify-between min-h-[260px]"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <h3 className="text-2xl font-extrabold text-[#181C2F] dark:text-white text-left max-w-[70%]">
+                  {feature.title}
+                </h3>
+                <figure className="ml-4 flex-shrink-0">
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title.toLowerCase().replace(/\s+/g, '-')}
+                    className="w-20 h-20 object-contain"
+                    width={80}
+                    height={80}
+                    loading="lazy"
+                  />
+                </figure>
               </div>
-            ))}
-          </div>
+              <p className="text-[#4B5563] dark:text-white text-base leading-relaxed text-left">
+                {feature.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
