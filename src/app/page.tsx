@@ -26,7 +26,7 @@ export default function Home() {
       <BoostBanner />
       <LatestBlogs />
       <Community />
-      <Newsletter />
+ 
       <TrustedPartners />
       <Footer />
     </>

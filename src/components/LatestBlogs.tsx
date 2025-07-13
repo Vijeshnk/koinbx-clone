@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const LatestBlogs = () => (
-  <div className="MuiBox-root jss9 bg-[#2d3748] py-16">
+  <div className="MuiBox-root jss9 bg-white dark:bg-[#101426] py-16">
     <div>
       <div className="clslatestBlogBlock pt-5 mt-3">
         <div className="clscontainer max-w-7xl mx-auto px-4">
