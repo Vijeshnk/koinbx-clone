@@ -18,54 +18,54 @@ const steps = [
   },
 ];
 
+
 const HowItWorks = () => (
-  <div className="MuiBox-root">
-    <section className="clseasier-section bg-gray-50 dark:bg-gray-900 py-16">
-      <div className="clscontainer max-w-7xl mx-auto px-4">
-        <h2 className="clseasier-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-          Buying & selling cryptocurrency will be more user-friendly than in the past
+  <>
+    <section className="bg-white dark:bg-[#101426] py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-14">
+          Buying &amp; selling cryptocurrency will be more user-friendly than in the past
         </h2>
-        
-        <div className="clseasier-box-block">
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 list-none p-0 m-0">
-            {steps.map((step, index) => (
-              <li key={index} className="flex justify-center">
-                <div className="clseasier-box bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center max-w-sm w-full hover:shadow-xl transition-shadow">
-                  <figure className="mb-6 flex justify-center">
-                    <Image
-                      src={step.icon}
-                      alt={step.title.toLowerCase().replace(/\s+/g, '-')}
-                      width={80}
-                      height={80}
-                      loading="lazy"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </figure>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="clsportfolio-signup-block mt-16 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-            Sign up now to build your crypto portfolio for free!
-          </h3>
-          <div>
-            <button className="clsgreen-btn bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg">
-              Get Started
-            </button>
-          </div>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-0 relative">
+          {steps.map((step, idx) => (
+            <div key={idx} className="flex-1 flex flex-col items-center text-center px-4 relative">
+              <figure className="mb-6 flex justify-center">
+                <Image
+                  src={step.icon}
+                  alt={step.title.toLowerCase().replace(/\s+/g, '-')}
+                  width={90}
+                  height={90}
+                  loading="lazy"
+                  className="w-[90px] h-[90px] object-contain"
+                />
+              </figure>
+              <h3 className="text-xl font-bold text-white mb-2">
+                {step.title}
+              </h3>
+              <p className="text-[#8F9194] text-base max-w-xs mx-auto">
+                {step.desc}
+              </p>
+              {/* Divider line except after last */}
+              {idx !== steps.length - 1 && (
+                <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[120px] h-[4px] bg-[#181C2F] rounded-full" style={{left: '100%', marginLeft: '-60px'}}></span>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  </div>
+    {/* Sign up CTA section */}
+    <div className="w-full bg-white dark:bg-[#101426] py-16">
+      <div className="max-w-4xl mx-auto flex flex-col items-center">
+        <h3 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-6">
+          Sign up now to build your crypto portfolio for free!
+        </h3>
+        <button className="bg-[#4DE1FF] hover:bg-[#38c6e6] text-[#181C2F] font-bold text-base px-10 py-3 rounded-full transition-all duration-200">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </>
 );
 
 export default HowItWorks;
