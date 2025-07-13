@@ -3,8 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Script from "next/script";
-import { ThemeProvider as NextThemesProvider, type ThemeProviderProps } from "next-themes";
-import { PropsWithChildren } from "react";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -29,14 +28,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const ThemeProvider = NextThemesProvider as React.FC<PropsWithChildren<ThemeProviderProps>>;
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script crossOrigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js" />
       </head>
-      <body suppressHydrationWarning className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Layout>
             <Navbar />
             {children}

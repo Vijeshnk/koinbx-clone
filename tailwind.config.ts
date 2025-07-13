@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'koinbx-dark-blue': '#131932',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -50,6 +51,9 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
         }
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

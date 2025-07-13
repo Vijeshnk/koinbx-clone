@@ -1,3 +1,4 @@
+import Banner from "../components/Banner";
 import Hero from "../components/Hero";
 import LatestInsights from "../components/LatestInsights";
 import HowItWorks from "../components/HowItWorks";
@@ -15,7 +16,7 @@ import Newsletter from "../components/Newsletter";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Banner />
       <LatestInsights />
       <MarketTickerSection />
       <HowItWorks />
