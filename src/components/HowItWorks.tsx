@@ -56,13 +56,15 @@ const HowItWorks = () => (
     </section>
     {/* Sign up CTA section */}
     <div className="w-full bg-white dark:bg-[#131932] py-16">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
-        <h3 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-6">
-          Sign up now to build your crypto portfolio for free!
-        </h3>
-        <button className="bg-[#4DE1FF] hover:bg-[#38c6e6] text-[#181C2F] font-bold text-base px-10 py-3 rounded-full transition-all duration-200">
-          Get Started
-        </button>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col items-start">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-white text-left mb-6">
+            Sign up now to build your crypto portfolio for free!
+          </h3>
+          <button className="bg-[#4DE1FF] hover:bg-[#38c6e6] text-[#181C2F] font-bold text-base px-10 py-3 rounded-full transition-all duration-200">
+            Get Started
+          </button>
+        </div>
       </div>
     </div>
   </>

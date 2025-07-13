@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -11,7 +12,7 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-[#19213d] fixed w-full z-20 top-0 start-0" style={{ height: '62.172px' }}>
       <div className="flex flex-wrap items-center justify-between w-full h-full" style={{ paddingLeft: '15px', paddingRight: '15px', paddingTop: '0', paddingBottom: '0' }}>
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="/assets/img/NewUI/KoinBXLogoHead-white.svg"
               width={135}
@@ -28,7 +29,7 @@ const Navbar = () => {
               className="w-auto dark:hidden block"
               style={{ height: '46.17px', width: '135px' }}
             />
-          </a>
+          </Link>
           <div className="hidden xl:flex items-center space-x-4">
             <a href="/markets" className="nav-link d-none d-xl-block text-gray-900 dark:text-[#f5f5f5] hover:text-blue-700 px-4 py-2 rounded flex items-center gap-2 transition-all duration-500 relative">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

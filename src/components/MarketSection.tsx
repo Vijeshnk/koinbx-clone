@@ -136,7 +136,7 @@ const MarketSection = () => {
       <div className="top-gainers-losers-bg bg-gray-50 dark:bg-[#131932] py-12">
         <div className="clscontainer top-gainers-container max-w-7xl mx-auto px-4">
           <div className="mb-8">
-            <h2 className="top-gainers-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">
+            <h2 className="top-gainers-title text-3xl md:text-4xl font-bold text-left text-gray-900 dark:text-white">
               Catch Your Next Trading Opportunity
             </h2>
           </div>
@@ -144,7 +144,7 @@ const MarketSection = () => {
           <div className="row grid grid-cols-1 xl:grid-cols-12 gap-6">
             {/* Hot Coins / New Listing Section */}
             <div className="col-xl-7 xl:col-span-7 z-index-higher">
-              <div className="MuiPaper-root table-list-types bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+              <div className="MuiPaper-root table-list-types bg-white dark:bg-[#19213d] rounded-lg shadow-lg overflow-hidden">
                 <div className="hot-list-header p-6 border-b border-gray-200 dark:border-gray-700">
                   <div className="list-types-tab flex space-x-6">
                     <span 
@@ -173,7 +173,7 @@ const MarketSection = () => {
                 <div>
                   <div className="MuiTableContainer-root">
                     <table className="MuiTable-root list-view-table w-full">
-                      <thead className="MuiTableHead-root bg-gray-50 dark:bg-gray-700">
+                      <thead className="MuiTableHead-root bg-[#f5f7fa] dark:bg-[#252b4c]">
                         <tr className="MuiTableRow-root">
                           <th className="MuiTableCell-root MuiTableCell-head px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                             Trending Pairs
@@ -189,7 +189,7 @@ const MarketSection = () => {
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="MuiTableBody-root bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                      <tbody className="MuiTableBody-root bg-white dark:bg-[#19213d] divide-y divide-gray-200 dark:divide-gray-700">
                         {currentData.map((item) => (
                           <tr key={item.id} className="MuiTableRow-root hover:bg-gray-50 dark:hover:bg-gray-700">
                             <th className="MuiTableCell-root MuiTableCell-body px-6 py-4 whitespace-nowrap">
