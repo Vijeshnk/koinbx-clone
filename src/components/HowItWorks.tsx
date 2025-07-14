@@ -23,7 +23,7 @@ const HowItWorks = () => (
   <>
     <section className="bg-white dark:bg-[#131932] py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-14">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-14">
           Buying &amp; selling cryptocurrency will be more user-friendly than in the past
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-0 relative">
@@ -39,15 +39,15 @@ const HowItWorks = () => (
                   className="w-[90px] h-[90px] object-contain"
                 />
               </figure>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {step.title}
               </h3>
-              <p className="text-[#8F9194] text-base max-w-xs mx-auto">
+              <p className="text-gray-600 dark:text-[#8F9194] text-base max-w-xs mx-auto">
                 {step.desc}
               </p>
               {/* Divider line except after last */}
               {idx !== steps.length - 1 && (
-                <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[120px] h-[4px] bg-[#181C2F] rounded-full" style={{left: '100%', marginLeft: '-60px'}}></span>
+                <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[120px] h-[4px] bg-gray-200 dark:bg-[#181C2F] rounded-full" style={{left: '100%', marginLeft: '-60px'}}></span>
               )}
             </div>
           ))}
@@ -55,10 +55,10 @@ const HowItWorks = () => (
       </div>
     </section>
     {/* Sign up CTA section */}
-    <div className="w-full bg-white dark:bg-[#131932] py-16">
+    <section className="bg-white dark:bg-[#131932] py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col items-start">
-          <h3 className="text-2xl md:text-3xl font-extrabold text-white text-left mb-6">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white text-left mb-6">
             Sign up now to build your crypto portfolio for free!
           </h3>
           <button className="bg-[#4DE1FF] hover:bg-[#38c6e6] text-[#181C2F] font-bold text-base px-10 py-3 rounded-full transition-all duration-200">
@@ -66,7 +66,7 @@ const HowItWorks = () => (
           </button>
         </div>
       </div>
-    </div>
+    </section>
   </>
 );
 

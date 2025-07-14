@@ -52,9 +52,9 @@ const ThemeSwitcher = () => {
       className="p-2 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700"
     >
       {theme === "dark" ? (
-        <SunIcon />
-      ) : (
         <MoonIcon />
+      ) : (
+        <SunIcon />
       )}
     </button>
   );

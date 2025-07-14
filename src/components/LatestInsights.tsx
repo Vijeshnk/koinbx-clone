@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LeftArrow } from "../../public/assets/img/NewUI/leftarrow";
 import { RightArrow } from "../../public/assets/img/NewUI/righticon";
 
@@ -24,13 +24,63 @@ const slides = [
 
 const LatestInsights = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  // Create looped slides (original + duplicate for seamless loop)
+  const loopedSlides = [...slides, ...slides];
+
+  // Auto-slide functionality with infinite loop
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => {
+          const nextSlide = prev + 1;
+          // When we reach the end of original slides, reset to beginning
+          if (nextSlide >= slides.length) {
+            setTimeout(() => {
+              setIsTransitioning(false);
+              setCurrentSlide(0);
+              setTimeout(() => setIsTransitioning(true), 50);
+            }, 700); // Wait for transition to complete
+            return nextSlide;
+          }
+          return nextSlide;
+        });
+      }, 3000); // Change slide every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isHovered]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => {
+      const nextSlide = prev + 1;
+      if (nextSlide >= slides.length) {
+        setTimeout(() => {
+          setIsTransitioning(false);
+          setCurrentSlide(0);
+          setTimeout(() => setIsTransitioning(true), 50);
+        }, 700);
+        return nextSlide;
+      }
+      return nextSlide;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => {
+      if (prev === 0) {
+        setIsTransitioning(false);
+        setCurrentSlide(slides.length);
+        setTimeout(() => {
+          setIsTransitioning(true);
+          setCurrentSlide(slides.length - 1);
+        }, 50);
+        return prev;
+      }
+      return prev - 1;
+    });
   };
 
   return (
@@ -44,11 +94,15 @@ const LatestInsights = () => {
           </div>
           
           <div className="blog-card-container-slidedv relative">
-            <div className="slick-slider relative">
+            <div 
+              className="slick-slider relative"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               {/* Previous Arrow */}
               <button
                 onClick={prevSlide}
-                className="slick-arrow slick-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
+                className="slick-arrow slick-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 opacity-70 hover:opacity-100 transition-opacity"
                 style={{ display: 'block' }}
               >
             <LeftArrow />
@@ -57,23 +111,23 @@ const LatestInsights = () => {
               {/* Slider Container */}
               <div className="slick-list overflow-hidden mx-12" style={{ height: '230px' }}>
                 <div 
-                  className="slick-track flex transition-transform duration-500 ease-in-out"
+                  className={`slick-track flex ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
                   style={{ 
                     transform: `translate3d(-${currentSlide * 419}px, 0px, 0px)`,
-                    width: `${slides.length * 419}px`
+                    width: `${loopedSlides.length * 419}px`
                   }}
                 >
-                  {slides.map((slide, index) => (
+                  {loopedSlides.map((slide, index) => (
                     <div 
-                      key={index}
+                      key={`${slide.img}-${index}`}
                       className={`slick-slide ${index === currentSlide ? 'slick-active slick-current' : ''}`}
-                      style={{ width: '591px', marginRight: index !== slides.length - 1 ? '24px' : '0' }}
+                      style={{ width: '591px', marginRight: index !== loopedSlides.length - 1 ? '24px' : '0' }}
                     >
                       <div className="w-full inline-block">
                         <a href={slide.href} target="_blank" rel="noopener noreferrer">
                           <Image 
                             src={slide.img}
-                            className="img-fluid w-full h-full object-cover rounded-lg"
+                            className="img-fluid w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                             alt={slide.alt}
                             width={591}
                             height={332.44}
@@ -89,7 +143,7 @@ const LatestInsights = () => {
               {/* Next Arrow */}
               <button
                 onClick={nextSlide}
-                className="slick-arrow slick-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
+                className="slick-arrow slick-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 opacity-70 hover:opacity-100 transition-opacity"
                 style={{ display: 'block' }}
               >
                 <RightArrow />

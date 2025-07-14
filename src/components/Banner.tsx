@@ -1,5 +1,76 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState, useRef } from "react";
+
+const AnimatedCounter = ({ target, suffix = "", prefix = "" }: { target: number; suffix?: string; prefix?: string }) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2500; // 2.5 seconds
+    const steps = 60; // 60 steps for smooth animation
+    const increment = target / steps;
+    let current = 0;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      current = Math.min(target, increment * step);
+      setCount(current);
+
+      if (step >= steps) {
+        setCount(target);
+        clearInterval(timer);
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isVisible, target]);
+
+  const formatNumber = (num: number) => {
+    // Handle decimal numbers (like 1.5)
+    if (target % 1 !== 0) {
+      return num.toFixed(1);
+    }
+    return Math.floor(num).toString();
+  };
+
+  // Calculate the expected width to prevent layout shift
+  const getExpectedWidth = () => {
+    const fullText = `${prefix}${target % 1 !== 0 ? target.toFixed(1) : target}${suffix}`;
+    return fullText.length;
+  };
+
+  return (
+    <span 
+      ref={elementRef} 
+      className="counter inline-block"
+      style={{ minWidth: `${getExpectedWidth() * 0.6}em` }}
+    >
+      {prefix}{formatNumber(count)}{suffix}
+    </span>
+  );
+};
 
 const Banner = () => {
   return (
@@ -20,14 +91,18 @@ const Banner = () => {
 
           {/* Top 100 announcement */}
           <div className="topp100div flex items-center justify-center gap-2 mb-6">
-            <span>
+            <span className="w-[22px] h-[22px] flex-shrink-0">
               <Image
                 src="/assets/img/NewUI/growth.svg"
                 alt="flight-img"
-                loading="lazy"
+                loading="eager"
                 width={22}
                 height={22}
-                style={{ filter: 'brightness(0) saturate(100%) invert(77%) sepia(13%) saturate(7492%) hue-rotate(157deg) brightness(102%) contrast(101%)' }}
+                style={{ 
+                  filter: 'brightness(0) saturate(100%) invert(77%) sepia(13%) saturate(7492%) hue-rotate(157deg) brightness(102%) contrast(101%)',
+                  width: '22px',
+                  height: '22px'
+                }}
               />
             </span>
             <span className="top100-text cursor-pointer">
@@ -62,13 +137,15 @@ const Banner = () => {
             <div className="clsCounterBannerInner grid grid-cols-2 md:grid-cols-5 gap-6 text-center text-white">
               <div>
                 <p className="bold-text-banner mb-2">
-                  <span>
+                  <span className="block w-[100px] h-[50px] mx-auto">
                     <Image 
                       src="/assets/img/NewUI/GroupBanner6.svg" 
                       width={100} 
                       height={50} 
                       className="banner-milestone-img mx-auto" 
-                      alt="milestone-img" 
+                      alt="milestone-img"
+                      priority
+                      style={{ width: '100px', height: '50px' }}
                     />
                   </span>
                 </p>
@@ -76,25 +153,25 @@ const Banner = () => {
               </div>
               <div>
                 <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
-                  <span className="counter">1.5</span> M+
+                  <AnimatedCounter target={1.5} suffix=" M+" />
                 </p>
                 <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Userbase</p>
               </div>
               <div>
                 <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
-                  <span className="counter">225</span>+
+                  <AnimatedCounter target={225} suffix="+" />
                 </p>
                 <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Active Pairs</p>
               </div>
               <div>
                 <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
-                  $<span className="counter">38</span> Billion+
+                  <AnimatedCounter target={38} prefix="$" suffix=" Billion+" />
                 </p>
                 <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Traded so far</p>
               </div>
               <div>
                 <p className="bold-text-banner text-2xl font-bold mb-2 text-[#222] dark:text-white">
-                  <span className="counter">200</span>+
+                  <AnimatedCounter target={200} suffix="+" />
                 </p>
                 <p className="sub-text-banner text-sm text-[#222] dark:text-gray-300">Cryptos Listed</p>
               </div>
@@ -106,13 +183,14 @@ const Banner = () => {
         <div className="banner-marquee-div bg-[#f5f7fa] dark:bg-[#1a213d] py-4 overflow-hidden">
           <div className="MuiContainer-root MuiContainer-maxWidthLg max-w-6xl mx-auto px-4">
             <div className="banner-marquee flex items-center gap-4">
-              <div className="marquee-img">
+              <div className="marquee-img w-[30px] h-[30px] flex-shrink-0">
                 <Image 
                   src="/assets/img/NewUI/megaphone.svg" 
                   alt="megaphn-img" 
-                  loading="lazy" 
+                  loading="eager" 
                   width={30} 
-                  height={30} 
+                  height={30}
+                  style={{ width: '30px', height: '30px' }}
                 />
               </div>
               <div className="marquee-outer flex-1">
@@ -145,6 +223,21 @@ const Banner = () => {
           100% {
             transform: translateX(-100%);
           }
+        }
+        .counter {
+          display: inline-block;
+          transition: transform 0.1s ease-in-out;
+          font-variant-numeric: tabular-nums;
+          text-align: center;
+        }
+        .counter:hover {
+          transform: scale(1.05);
+        }
+        .bold-text-banner {
+          min-height: 2.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .bg-banner-background .banner-container {
           background: url(/assets/img/NewUI/Background.webp);

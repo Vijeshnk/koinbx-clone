@@ -20,42 +20,38 @@ const helpLinks = [
 ];
 
 const NeedHelp = () => (
-  <div className="MuiBox-root ">
-    <section className="clshelp-section bg-white dark:bg-[#131932] py-16">
-      <div className="clscontainer max-w-7xl mx-auto px-4">
-        <h2 className="clscommon-title text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-          Need Help?
-        </h2>
-        
-        <div className="clshelp-box-block">
-          <div className="row grid grid-cols-1 md:grid-cols-3 gap-8">
-            {helpLinks.map((item, index) => (
-              <div key={index} className="col-sm-12 col-lg-4">
-                <div className="clshelp-box bg-[#f5f7fa] dark:bg-[#1a213d] rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    {item.desc}
-                  </p>
-                  <h6>
-                    <a 
-                      href={item.link}
-                      target={item.link.startsWith('http') ? "_blank" : undefined}
-                      rel={item.link.startsWith('http') ? "noopener noreferrer" : undefined}
-                      className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-                    >
-                      {item.linkText}
-                    </a>
-                  </h6>
-                </div>
-              </div>
-            ))}
+  <section className="bg-white dark:bg-[#131932] py-16">
+    <div className="max-w-7xl mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+        Need Help?
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {helpLinks.map((item, index) => (
+          <div key={index} className="col-span-1">
+            <div className="bg-[#f5f7fa] dark:bg-[#1a213d] rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                {item.title}
+              </h4>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                {item.desc}
+              </p>
+              <h6>
+                <a 
+                  href={item.link}
+                  target={item.link.startsWith('http') ? "_blank" : undefined}
+                  rel={item.link.startsWith('http') ? "noopener noreferrer" : undefined}
+                  className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                >
+                  {item.linkText}
+                </a>
+              </h6>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 );
 
 export default NeedHelp;
