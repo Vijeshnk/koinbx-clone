@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto, IBM_Plex_Sans } from "next/font/google";
+import { Roboto, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
-import ClientBody from "./ClientBody";
-import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -41,10 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script crossOrigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${ibmPlexSans.variable} antialiased`}>
+      <body className={`${roboto.variable} ${ibmPlexSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
