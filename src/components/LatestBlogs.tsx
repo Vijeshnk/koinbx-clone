@@ -6,7 +6,7 @@ const LatestBlogs = () => (
       <div className="clslatestBlogBlock pt-5 mt-3">
         <div className="clscontainer max-w-7xl mx-auto px-4">
           <div className="mb-12">
-            <h2 className="latest-blog-text text-white text-3xl md:text-4xl font-bold">Latest Blogs</h2>
+            <h2 className="latest-blog-text text-gray-900 dark:text-white text-3xl md:text-4xl font-bold">Latest Blogs</h2>
           </div>
           <div className="latest-blog-desktop-view">
             <div className="row grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -22,8 +22,8 @@ const LatestBlogs = () => (
                   />
                 </div>
                 <p className="category-name inline-block bg-[#4FD1C7] text-black px-3 py-1 rounded text-sm font-semibold mb-3">Crypto</p>
-                <p className="category-title text-white text-xl font-bold mb-4 leading-tight">Boost Your Trading Strategy with On-Chain Crypto Analytics</p>
-                <p className="read-more-blog cursor-pointer text-gray-300 hover:text-white transition-colors flex items-center">
+                <p className="category-title text-gray-900 dark:text-white text-xl font-bold mb-4 leading-tight">Boost Your Trading Strategy with On-Chain Crypto Analytics</p>
+                <p className="read-more-blog cursor-pointer text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center">
                   <span>Read More</span>
                   <span className="ml-2">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ const LatestBlogs = () => (
                   </div>
                   <div className="second-flex-column-blog flex-1">
                     <p className="category-name inline-block bg-[#4FD1C7] text-black px-2 py-1 rounded text-xs font-semibold mb-2">Crypto</p>
-                    <p className="category-title text-white text-base font-semibold leading-tight">What Is the Metaverse and How Is Crypto Involved?</p>
+                    <p className="category-title text-gray-900 dark:text-white text-base font-semibold leading-tight">What Is the Metaverse and How Is Crypto Involved?</p>
                   </div>
                 </div>
                 <div className="flex w-full items-start gap-4">
@@ -62,7 +62,7 @@ const LatestBlogs = () => (
                   </div>
                   <div className="second-flex-column-blog flex-1">
                     <p className="category-name inline-block bg-[#4FD1C7] text-black px-2 py-1 rounded text-xs font-semibold mb-2">Crypto</p>
-                    <p className="category-title text-white text-base font-semibold leading-tight">Solana Price Prediction 2025 - 2030: Is SOL a Good Investment?</p>
+                    <p className="category-title text-gray-900 dark:text-white text-base font-semibold leading-tight">Solana Price Prediction 2025 - 2030: Is SOL a Good Investment?</p>
                   </div>
                 </div>
                 <div className="flex w-full items-start gap-4">
@@ -78,7 +78,7 @@ const LatestBlogs = () => (
                   </div>
                   <div className="second-flex-column-blog flex-1">
                     <p className="category-name inline-block bg-[#4FD1C7] text-black px-2 py-1 rounded text-xs font-semibold mb-2">Learn</p>
-                    <p className="category-title text-white text-base font-semibold leading-tight">How Smart Contracts Work on Ethereum and Beyond</p>
+                    <p className="category-title text-gray-900 dark:text-white text-base font-semibold leading-tight">How Smart Contracts Work on Ethereum and Beyond</p>
                   </div>
                 </div>
               </div>
