@@ -132,10 +132,10 @@ const Footer = () => {
 	return (
 		<footer className="w-full bg-white dark:bg-[#131932] text-[#707a8a] dark:text-white pt-8 pb-4">
 			<div className="max-w-7xl mx-auto px-4">
-				{/* Desktop grid layout */}
-				<div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2 mb-10 text-xs">
+				{/* Desktop grid layout (lg and above) */}
+				<div className="hidden lg:grid grid-cols-6 gap-2 mb-10 text-xs">
 					{/* Logo and Description */}
-					<div className="lg:col-span-2 flex flex-col items-center md:items-start">
+					<div className="col-span-2 flex flex-col items-start">
 						<Image
 							src="/assets/img/NewUI/KoinbxLogo.svg"
 							alt="KoinBX Logo"
@@ -147,7 +147,7 @@ const Footer = () => {
 							Empower your crypto journey with KoinBX, the simple and secure crypto
 							exchange platform
 						</p>
-						<div className="flex flex-col items-center md:items-start gap-2 mb-4">
+						<div className="flex flex-col items-start gap-2 mb-4">
 							<div className="flex gap-2">
 								<a
 									href="https://play.google.com/store/apps/details?id=com.application.koinbazar&hl=en_IN&gl=US"
@@ -181,7 +181,7 @@ const Footer = () => {
 								alt="QR Code"
 								width={100}
 								height={100}
-								className="w-24 h-24 bg-white p-2 rounded mx-auto md:mx-0"
+								className="w-24 h-24 bg-white p-2 rounded"
 							/>
 						</div>
 						<p className="text-[#707a8a] dark:text-gray-400 mb-4">
@@ -269,7 +269,134 @@ const Footer = () => {
 					</div>
 				</div>
 
-				{/* Mobile Accordions */}
+				{/* Tablet Accordions (md to lg) */}
+				<div className="hidden md:block lg:hidden mb-6">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						{/* Logo and Description for Tablet */}
+						<div className="flex flex-col items-start">
+							<Image
+								src="/assets/img/NewUI/KoinbxLogo.svg"
+								alt="KoinBX Logo"
+								width={120}
+								height={30}
+								className="h-8 w-auto mb-4"
+							/>
+							<p className="mb-4 max-w-sm leading-relaxed text-sm">
+								Empower your crypto journey with KoinBX, the simple and secure crypto
+								exchange platform
+							</p>
+							<div className="flex flex-col items-start gap-3 mb-4">
+								<div className="flex gap-2">
+									<a
+										href="https://play.google.com/store/apps/details?id=com.application.koinbazar&hl=en_IN&gl=US"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Image
+											src="/assets/img/NewUI/GooglePlayicon.svg"
+											alt="Get it on Google Play"
+											width={140}
+											height={42}
+											className="h-10 w-auto"
+										/>
+									</a>
+									<a
+										href="https://apps.apple.com/in/app/koinbazar/id1567360326"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Image
+											src="/assets/img/NewUI/iOS.svg"
+											alt="Download on App Store"
+											width={140}
+											height={42}
+											className="h-10 w-auto"
+										/>
+									</a>
+								</div>
+								<Image
+									src="/assets/img/NewUI/qr-code-placeholder.svg"
+									alt="QR Code"
+									width={100}
+									height={100}
+									className="w-20 h-20 bg-white p-2 rounded"
+								/>
+							</div>
+							<p className="text-[#707a8a] dark:text-gray-400 text-xs">
+								A FIU (Govt. of India) registered entity with REID :<br />VA00448773
+							</p>
+						</div>
+						
+						{/* Community Icons for Tablet */}
+						<div className="flex flex-col items-start">
+							<h3 className="font-semibold mb-4 text-black dark:text-white text-sm">
+								Community
+							</h3>
+							<div className="grid grid-cols-6 gap-2">
+								{linkGroups[3].icons?.map((item) => (
+									<a
+										key={item.alt}
+										href={item.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="bg-[#25d0f7] rounded-full p-2 hover:bg-[#00C5F6] transition-colors flex items-center justify-center"
+									>
+										<Image
+											src={item.icon}
+											alt={item.alt}
+											width={24}
+											height={24}
+											className="w-5 h-5"
+										/>
+									</a>
+								))}
+							</div>
+						</div>
+					</div>
+					
+					{/* Accordion sections for other link groups */}
+					<div className="divide-y divide-gray-200 dark:divide-gray-700">
+						{linkGroups.slice(0, 3).map((group, idx) => (
+							<div key={group.title}>
+								<button
+									className="w-full flex justify-between items-center py-4 font-semibold text-left text-black dark:text-white focus:outline-none text-sm"
+									onClick={() => handleAccordion(idx)}
+									aria-expanded={open[idx]}
+									aria-controls={`footer-accordion-tablet-${idx}`}
+								>
+									{group.title}
+									<span
+										className={`transform transition-transform ${
+											open[idx] ? "rotate-180" : "rotate-0"
+										}`}
+									>
+										<DownArrow />
+									</span>
+								</button>
+								<div
+									id={`footer-accordion-tablet-${idx}`}
+									className={`overflow-hidden transition-all duration-300 ${
+										open[idx] ? "max-h-96 py-2" : "max-h-0"
+									}`}
+								>
+									<div className="grid grid-cols-2 gap-4">
+										{group.links.map((link) => (
+											<a
+												key={link}
+												href="#"
+												className="text-sm hover:text-[#00C5F6] transition-colors py-1"
+											>
+												{link}
+											</a>
+										))}
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+
+				{/* Mobile Accordions (sm and below) */}
 				<div className="md:hidden divide-y divide-gray-200 dark:divide-gray-700 mb-6">
 					{linkGroups.map((group, idx) => (
 						<div key={group.title}>

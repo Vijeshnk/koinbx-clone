@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
+import AnnouncementModal from "../components/AnnouncementModal";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -40,6 +41,7 @@ export default function RootLayout({
             <Navbar />
             {children}
           </Layout>
+          <AnnouncementModal />
         </ThemeProvider>
       </body>
     </html>
