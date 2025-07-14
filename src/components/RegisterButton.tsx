@@ -16,12 +16,14 @@ const RegisterButton = ({
     navbar: "py-2 px-6 text-sm"
   };
 
+  const buttonText = variant === "navbar" ? "Register" : "Register Now";
+
   return (
     <button 
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
       onClick={onClick}
     >
-      Register Now
+      {buttonText}
     </button>
   );
 };
