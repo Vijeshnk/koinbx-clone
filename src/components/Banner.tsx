@@ -127,7 +127,7 @@ const Banner = () => {
 
           {/* Register button */}
           <div className="registerbtn-banner-div text-center mb-12">
-            <button className="register-btn-banner bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors">
+            <button className="register-btn-banner bg-gradient-to-r from-[#4DE1FF] to-[#00c5f6] hover:from-[#38c6e6] hover:to-[#0099cc] text-[#181C2F] font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
               Register Now
             </button>
           </div>
