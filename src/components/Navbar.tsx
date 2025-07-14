@@ -58,30 +58,32 @@ const Navbar = () => {
             <a href="/login" className="text-gray-900 dark:text-white hover:text-blue-700">Login</a>
             <RegisterButton variant="navbar" />
             <ThemeSwitcher />
-            <div
-              className="relative"
-              onMouseEnter={() => setDownloadOpen(true)}
-              onMouseLeave={() => setDownloadOpen(false)}
-            >
-              <button type="button" className="p-2 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+            <div className="relative">
+              <button 
+                type="button" 
+                className="p-2 text-gray-500 dark:text-gray-400"
+                onClick={() => setDownloadOpen(!isDownloadOpen)}
+              >
                 <Image src="/assets/img/NewUI/download.svg" width={20} height={20} alt="Download App" className="invert dark:invert-0" />
               </button>
               {isDownloadOpen && (
-                <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg dark:bg-gray-800 p-4">
-                  <div className="flex items-center space-x-4">
-                    <div>
+                <div className="absolute right-0 mt-2 w-80 bg-[#19213d] rounded-lg shadow-lg p-6">
+                  <div className="flex items-center justify-between gap-6">
+                    <div className="flex flex-col gap-3">
                       <a href="https://play.google.com/store/apps/details?id=com.application.koinbazar&hl=en_IN&gl=US" target="_blank" rel="noopener noreferrer">
-                        <Image src="/assets/img/NewUI/GooglePlayicon.svg" className="cursor-pointer" alt="koinbx-google-play-store" width={100} height={30} />
+                        <Image src="/assets/img/NewUI/GooglePlayicon.svg" className="cursor-pointer hover:opacity-80 transition-opacity" alt="koinbx-google-play-store" width={140} height={42} />
                       </a>
-                      <a href="https://apps.apple.com/in/app/koinbazar/id1567360326" target="_blank" rel="noopener noreferrer" className="mt-2 block">
-                        <Image src="/assets/img/NewUI/iOS.svg" className="cursor-pointer" alt="koinbx-ios-app-store" width={100} height={30} />
+                      <a href="https://apps.apple.com/in/app/koinbazar/id1567360326" target="_blank" rel="noopener noreferrer">
+                        <Image src="/assets/img/NewUI/iOS.svg" className="cursor-pointer hover:opacity-80 transition-opacity" alt="koinbx-ios-app-store" width={140} height={42} />
                       </a>
                     </div>
-                    <div className="flex-shrink-0">
-                      <Image src="/assets/img/NewUI/account-step.svg" width={80} height={80} alt="QR Code" />
+                    <div className="flex flex-col items-center">
+                      <div className="bg-white p-2 rounded mb-2">
+                        <Image src="/assets/img/NewUI/qr-code-placeholder.svg" width={80} height={80} alt="QR Code" />
+                      </div>
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 text-center">Scan QR Code to Download App</p>
+                  <p className="text-sm text-white text-center mt-4 font-medium">Scan QR Code to Download App</p>
                 </div>
               )}
             </div>
