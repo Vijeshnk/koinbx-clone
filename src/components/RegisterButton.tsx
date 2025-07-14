@@ -1,5 +1,5 @@
 interface RegisterButtonProps {
-  variant?: "primary" | "navbar";
+  variant?: "primary" | "navbar" | "mobile";
   className?: string;
   onClick?: () => void;
 }
@@ -13,10 +13,11 @@ const RegisterButton = ({
   
   const variantClasses = {
     primary: "py-4 px-12 text-lg",
-    navbar: "py-2 px-6 text-sm"
+    navbar: "py-2 px-6 text-sm",
+    mobile: "w-full py-3 px-6 text-base"
   };
 
-  const buttonText = variant === "navbar" ? "Register" : "Register Now";
+  const buttonText = variant === "navbar" ? "Register" : variant === "mobile" ? "Register" : "Register Now";
 
   return (
     <button 

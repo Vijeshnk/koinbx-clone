@@ -9,6 +9,10 @@ const Navbar = () => {
   const [isDownloadOpen, setDownloadOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className="bg-white dark:bg-[#19213d] fixed w-full z-20 top-0 start-0" style={{ height: '62.172px' }}>
       <div className="flex flex-wrap items-center justify-between w-full h-full" style={{ paddingLeft: '15px', paddingRight: '15px', paddingTop: '0', paddingBottom: '0' }}>
@@ -104,16 +108,103 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className={`items-center justify-between w-full md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="navbar-sticky">
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li><a href="/markets" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Markets</a></li>
-            <li><a href="/fees" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Fees</a></li>
-            <li><a href="/trade/BTC-INR" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Trade</a></li>
-            <li><a href="/list-your-crypto-on-koinbx" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">List Your Crypto</a></li>
-            <li><a href="/earnings" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Earnings</a></li>
-            <li className="border-t border-gray-200 my-2"></li>
-            <li><a href="/login" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white">Login</a></li>
-          </ul>
+        <div className={`items-center justify-between w-full md:hidden`} id="navbar-sticky">
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div className="fixed inset-0 z-50 flex">
+              {/* Background overlay */}
+              <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setMobileMenuOpen(false)}></div>
+              
+              {/* Drawer */}
+              <div className={`fixed top-0 right-0 h-full w-4/5 bg-white dark:bg-[#19213d] shadow-xl transform transition-transform duration-300 ease-in-out translate-x-0 flex flex-col`}>
+              {/* Header with Close Button */}
+              <div className="flex items-center justify-end p-4 border-b border-gray-200 dark:border-gray-600">
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Navigation Items */}
+              <div className="flex-1 overflow-y-auto px-4 py-6">
+                <div className="space-y-1">
+                  <a href="/login" className="flex items-center text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    Login
+                  </a>
+                  
+                  <div className="py-2">
+                    <RegisterButton variant="mobile" onClick={handleNavClick} />
+                  </div>
+
+                  <div className="border-t border-gray-200 dark:border-gray-600 my-4"></div>
+
+                  <a href="/markets" className="flex items-center justify-between text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    <span>Market</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+
+                  <a href="/fees" className="flex items-center justify-between text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    <span>Fees</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+
+                  <a href="/trade/BTC-INR" className="flex items-center justify-between text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    <span>Trade</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+
+                  <a href="/list-your-crypto-on-koinbx" className="flex items-center justify-between text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    <span>List Your Crypto</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+
+                  <a href="/earnings" className="flex items-center justify-between text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    <span>Earn</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+
+                  <a href="/trade-contest" className="flex items-center justify-between text-gray-900 dark:text-white text-lg py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" onClick={handleNavClick}>
+                    <span>Trade Contest</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Footer Section */}
+              <div className="border-t border-gray-200 dark:border-gray-600 p-4">
+                {/* Theme Switcher */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-gray-900 dark:text-white text-lg">Theme</span>
+                  <ThemeSwitcher />
+                </div>
+
+                {/* Download Apps */}
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-900 dark:text-white text-lg">Download Apps</span>
+                  <svg className="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+              </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>
