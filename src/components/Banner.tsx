@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
+import RegisterButton from "./RegisterButton";
 
 const AnimatedCounter = ({ target, suffix = "", prefix = "" }: { target: number; suffix?: string; prefix?: string }) => {
   const [count, setCount] = useState(0);
@@ -127,9 +128,7 @@ const Banner = () => {
 
           {/* Register button */}
           <div className="registerbtn-banner-div text-center mb-12">
-            <button className="register-btn-banner bg-gradient-to-r from-[#4DE1FF] to-[#00c5f6] hover:from-[#38c6e6] hover:to-[#0099cc] text-[#181C2F] font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-              Register Now
-            </button>
+            <RegisterButton variant="primary" />
           </div>
 
           {/* Counter section */}

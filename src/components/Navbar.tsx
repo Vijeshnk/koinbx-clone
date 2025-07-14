@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
+import RegisterButton from "./RegisterButton";
 
 const Navbar = () => {
   const [isDownloadOpen, setDownloadOpen] = useState(false);
@@ -55,19 +56,7 @@ const Navbar = () => {
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="hidden md:flex items-center space-x-4">
             <a href="/login" className="text-gray-900 dark:text-white hover:text-blue-700">Login</a>
-            <a href="/register" className="text-center rounded-full transition-all duration-300" style={{ 
-              lineHeight: '29px', 
-              fontStyle: 'normal', 
-              fontWeight: '500', 
-              color: 'rgb(30, 35, 41)', 
-              fontFamily: 'IBM Plex Sans', 
-              fontSize: '14px', 
-              margin: '0px 15px', 
-              padding: '7px 24px', 
-              borderRadius: '50px', 
-              background: 'rgb(89, 225, 255)',
-              textDecoration: 'none'
-            }}>Register</a>
+            <RegisterButton variant="navbar" />
             <ThemeSwitcher />
             <div
               className="relative"
@@ -97,19 +86,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
-          <a href="/register" className="text-center rounded-full transition-all duration-300 md:hidden" style={{ 
-            lineHeight: '29px', 
-            fontStyle: 'normal', 
-            fontWeight: '500', 
-            color: 'rgb(30, 35, 41)', 
-            fontFamily: 'IBM Plex Sans', 
-            fontSize: '14px', 
-            margin: '0px 5px', 
-            padding: '7px 24px', 
-            borderRadius: '50px', 
-            background: 'rgb(89, 225, 255)',
-            textDecoration: 'none'
-          }}>Register</a>
+          <RegisterButton variant="navbar" className="md:hidden" />
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
