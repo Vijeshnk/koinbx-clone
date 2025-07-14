@@ -1,17 +1,32 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import RegisterButton from "./RegisterButton";
 
 const Navbar = () => {
   const [isDownloadOpen, setDownloadOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const downloadRef = useRef<HTMLDivElement>(null);
 
   const handleNavClick = () => {
     setMobileMenuOpen(false);
   };
+
+  // Close download dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (downloadRef.current && !downloadRef.current.contains(event.target as Node)) {
+        setDownloadOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="bg-white dark:bg-[#19213d] fixed w-full z-20 top-0 start-0" style={{ height: '62.172px' }}>
@@ -62,7 +77,7 @@ const Navbar = () => {
             <a href="/login" className="text-gray-900 dark:text-white hover:text-blue-700">Login</a>
             <RegisterButton variant="navbar" />
             <ThemeSwitcher />
-            <div className="relative">
+            <div className="relative" ref={downloadRef}>
               <button 
                 type="button" 
                 className="p-2 text-gray-500 dark:text-gray-400"
