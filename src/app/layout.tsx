@@ -33,9 +33,9 @@ export default function RootLayout({
       <body className={`${roboto.variable} ${ibmPlexSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="light"
+          enableSystem={false}
+          storageKey="koinbx-theme"
         >
           <Layout>
             <Navbar />
