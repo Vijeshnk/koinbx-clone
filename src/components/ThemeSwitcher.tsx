@@ -55,7 +55,7 @@ const ThemeSwitcher = () => {
   return (
     <button
       onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
-      className="p-2 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 transition-colors"
+      className="p-2 text-gray-500 rounded-lg focus:outline-none dark:text-gray-400 transition-colors"
       aria-label={`Switch to ${currentTheme === "dark" ? "light" : "dark"} mode`}
     >
       {currentTheme === "dark" ? <MoonIcon /> : <SunIcon />}
